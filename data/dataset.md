@@ -1,12 +1,13 @@
-## Dataset
+## Dataset 
 
 ### Estadísticas generales
 
 | Elemento | Total |
 |---|---|
-| Películas | 18 |
-| Personas (actores + directores) | 23 |
-| Géneros | 6 |
+| Películas | 24 |
+| Directores | 9 |
+| Actores | 24 |
+| Géneros | 9 |
 
 ---
 
@@ -20,6 +21,9 @@
 | Romance |
 | Horror |
 | Comedy |
+| Crime |
+| Western |
+| War |
 
 ---
 
@@ -32,9 +36,10 @@
 | James Cameron | 1954 | Titanic, Avatar |
 | Stanley Kubrick | 1928 | 2001: A Space Odyssey, A Clockwork Orange, The Shining, Eyes Wide Shut |
 | Alejandro G. Iñárritu | 1963 | The Revenant, Birdman |
-| Martin Scorsese | 1942 | Shutter Island, The Wolf of Wall Street |
+| Martin Scorsese | 1942 | Shutter Island, The Wolf of Wall Street, Goodfellas |
 | Cameron Crowe | 1957 | Jerry Maguire |
 | Miloš Forman | 1932 | One Flew Over the Cuckoo's Nest |
+| Quentin Tarantino | 1963 | Pulp Fiction, Kill Bill: Volume 1, Kill Bill: Volume 2, Inglourious Basterds, Django Unchained |
 
 ---
 
@@ -44,7 +49,7 @@
 |---|---|---|
 | Keanu Reeves | 1964 | The Matrix, The Matrix Reloaded |
 | Carrie-Anne Moss | 1967 | The Matrix, The Matrix Reloaded |
-| Leonardo DiCaprio | 1974 | Inception, Titanic, The Revenant, Shutter Island, The Wolf of Wall Street |
+| Leonardo DiCaprio | 1974 | Inception, Titanic, The Revenant, Shutter Island, The Wolf of Wall Street, Django Unchained |
 | Christian Bale | 1974 | The Dark Knight, Batman Begins |
 | Heath Ledger | 1979 | The Dark Knight |
 | Matthew McConaughey | 1969 | Interstellar |
@@ -57,6 +62,15 @@
 | Nicole Kidman | 1967 | Eyes Wide Shut |
 | Michael Keaton | 1951 | Birdman |
 | Edward Norton | 1969 | Birdman |
+| Ray Liotta | 1954 | Goodfellas |
+| Robert De Niro | 1943 | Goodfellas |
+| Joe Pesci | 1943 | Goodfellas |
+| John Travolta | 1954 | Pulp Fiction |
+| Samuel L. Jackson | 1948 | Pulp Fiction, Django Unchained |
+| Uma Thurman | 1970 | Pulp Fiction, Kill Bill: Volume 1, Kill Bill: Volume 2 |
+| Christoph Waltz | 1956 | Inglourious Basterds, Django Unchained |
+| Brad Pitt | 1963 | Inglourious Basterds |
+| Jamie Foxx | 1967 | Django Unchained |
 
 ---
 
@@ -80,8 +94,14 @@
 | 14 | Birdman | 2014 | Iñárritu | Drama, Comedy | Michael Keaton, Edward Norton |
 | 15 | Shutter Island | 2010 | Scorsese | Drama, Horror | Leonardo DiCaprio |
 | 16 | The Wolf of Wall Street | 2013 | Scorsese | Drama, Comedy | Leonardo DiCaprio |
-| 17 | Jerry Maguire | 1996 | Crowe | Drama, Romance | Tom Cruise |
-| 18 | One Flew Over the Cuckoo's Nest | 1975 | Forman | Drama | Jack Nicholson |
+| 17 | Goodfellas | 1990 | Scorsese | Crime, Drama | Ray Liotta, Robert De Niro, Joe Pesci |
+| 18 | Jerry Maguire | 1996 | Crowe | Drama, Romance | Tom Cruise |
+| 19 | One Flew Over the Cuckoo's Nest | 1975 | Forman | Drama | Jack Nicholson |
+| 20 | Pulp Fiction | 1994 | Tarantino | Crime, Drama | John Travolta, Samuel L. Jackson, Uma Thurman |
+| 21 | Kill Bill: Volume 1 | 2003 | Tarantino | Action, Crime | Uma Thurman |
+| 22 | Kill Bill: Volume 2 | 2004 | Tarantino | Action, Crime | Uma Thurman |
+| 23 | Inglourious Basterds | 2009 | Tarantino | War, Drama | Christoph Waltz, Brad Pitt |
+| 24 | Django Unchained | 2012 | Tarantino | Western, Drama | Leonardo DiCaprio, Christoph Waltz, Samuel L. Jackson, Jamie Foxx |
 
 ---
 
@@ -90,24 +110,28 @@
 ### Actores con más películas
 | Actor | Total |
 |---|---|
-| Leonardo DiCaprio | 5 |
+| Leonardo DiCaprio | 6 |
+| Uma Thurman | 3 |
 | Keanu Reeves | 2 |
 | Carrie-Anne Moss | 2 |
 | Christian Bale | 2 |
 | Jack Nicholson | 2 |
 | Tom Cruise | 2 |
+| Samuel L. Jackson | 2 |
+| Christoph Waltz | 2 |
 
-#### Directores con más películas
+### Directores con más películas
 | Director | Total |
 |---|---|
+| Quentin Tarantino | 5 |
 | Christopher Nolan | 4 |
 | Stanley Kubrick | 4 |
-| Martin Scorsese | 2 |
-| James Cameron | 2 |
+| Martin Scorsese | 3 |
 | Lilly Wachowski | 2 |
+| James Cameron | 2 |
 | Alejandro G. Iñárritu | 2 |
 
-#### Actores que trabajaron juntos
+### Actores que trabajaron juntos
 | Actor A | Actor B | Película |
 |---|---|---|
 | Keanu Reeves | Carrie-Anne Moss | The Matrix, The Matrix Reloaded |
@@ -115,11 +139,21 @@
 | Christian Bale | Heath Ledger | The Dark Knight |
 | Tom Cruise | Nicole Kidman | Eyes Wide Shut |
 | Michael Keaton | Edward Norton | Birdman |
+| Ray Liotta | Robert De Niro, Joe Pesci | Goodfellas |
+| John Travolta | Samuel L. Jackson, Uma Thurman | Pulp Fiction |
+| Christoph Waltz | Brad Pitt | Inglourious Basterds |
+| DiCaprio | Christoph Waltz, Samuel L. Jackson, Jamie Foxx | Django Unchained |
 
-#### DiCaprio por director
+### DiCaprio por director
 | Director | Película |
 |---|---|
 | Christopher Nolan | Inception |
 | James Cameron | Titanic |
 | Alejandro G. Iñárritu | The Revenant |
 | Martin Scorsese | Shutter Island, The Wolf of Wall Street |
+| Quentin Tarantino | Django Unchained |
+
+### Waltz por director
+| Director | Película |
+|---|---|
+| Quentin Tarantino | Inglourious Basterds, Django Unchained |
