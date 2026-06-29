@@ -25,14 +25,12 @@ def load_seed_file():
 
     return statements
 
-
 def run_setup(driver):
     statements = load_seed_file()
 
     with driver.session() as session:
         for statement in statements:
             session.run(statement)
-
 
 def verify_data(driver):
     checks = [
