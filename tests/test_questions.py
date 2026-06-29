@@ -1,7 +1,8 @@
-import os
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from src.movie_llm import ask_movie_graph
 
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "outputs", "respuestas.txt")
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "..", "outputs", "respuestas.txt")
 
 questions = [
     "¿En qué año se estrenó The Matrix?",

@@ -1,12 +1,13 @@
-import os
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from src.movie_llm import ask_movie_graph
 
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "outputs", "respuestas_ambiguas.txt")
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "..", "outputs", "respuestas_ambiguas.txt")
 
 questions = [
     "las películas de Keanu",               # ambigua: actor o director?
     "películas de un director que no existe", # sin resultados
-    "¿Qué hizo Tarantino?",                 # ambigua: actuo o dirigio?
+    "¿Qué dirigió o actuó Quentin Tarantino?",                 # ambigua: actuo o dirigio?
 ]
 
 
