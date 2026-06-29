@@ -1,11 +1,11 @@
 import os
 from neo4j import GraphDatabase
-from openai import OpenAI
+from groq import Groq
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
-PROMPTS_DIR = os.path.join(os.path.dirname(__file__), "prompts")
+PROMPTS_DIR = os.path.join(os.path.dirname(__file__), "..", "prompts")
 
 
 def load_prompt(filename):
@@ -23,7 +23,7 @@ class MovieChatbot:
                 os.getenv("NEO4J_PASSWORD", "test1234")
             )
         )
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
         self.cypher_prompt = load_prompt("cypher_generator.txt")
         self.formatter_prompt = load_prompt("response_formatter.txt")
 
@@ -34,7 +34,7 @@ class MovieChatbot:
     # LLM
     def call_llm(self, prompt):
         response = self.client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": prompt}],
             temperature=0
         )
