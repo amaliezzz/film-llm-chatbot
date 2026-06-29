@@ -1,0 +1,22 @@
+Pregunta 1: las películas de Keanu
+Cypher: MATCH (p:Person {name: 'Keanu Reeves'}) OPTIONAL MATCH (p)-[:ACTED_IN]->(m1:Movie) OPTIONAL MATCH (p)-[:DIRECTED]->(m2:Movie) RETURN DISTINCT coalesce(m1.title, m2.title) AS pelicula
+Resultados raw: [{'pelicula': 'The Matrix Reloaded'}, {'pelicula': 'The Matrix'}]
+Respuesta: Keanu Reeves actuó en las siguientes películas:
+• The Matrix Reloaded
+• The Matrix
+--------------------------------------------------
+Pregunta 2: películas de un director que no existe
+Cypher: MATCH (p:Person {name: 'Director Inexistente'})-[:DIRECTED]->(m:Movie) RETURN m.title AS pelicula
+Resultados raw: []
+Respuesta: No encontré información sobre eso en la base de datos.
+--------------------------------------------------
+Pregunta 3: ¿Qué dirigió o actuó Quentin Tarantino?
+Cypher: MATCH (p:Person {name: 'Quentin Tarantino'}) OPTIONAL MATCH (p)-[:ACTED_IN]->(m1:Movie) OPTIONAL MATCH (p)-[:DIRECTED]->(m2:Movie) RETURN DISTINCT coalesce(m1.title, m2.title) AS pelicula
+Resultados raw: [{'pelicula': 'Django Unchained'}, {'pelicula': 'Inglourious Basterds'}, {'pelicula': 'Kill Bill: Volume 2'}, {'pelicula': 'Kill Bill: Volume 1'}, {'pelicula': 'Pulp Fiction'}]
+Respuesta: Quentin Tarantino dirigió o actuó en 5 películas en la base de datos:
+• Django Unchained
+• Inglourious Basterds
+• Kill Bill: Volume 2
+• Kill Bill: Volume 1
+• Pulp Fiction
+--------------------------------------------------

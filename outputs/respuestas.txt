@@ -1,0 +1,33 @@
+Pregunta 1: ¿En qué año se estrenó The Matrix?
+Cypher: MATCH (m:Movie {title: 'The Matrix'}) RETURN m.released AS año
+Respuesta: The Matrix se estrenó en 1999.
+--------------------------------------------------
+Pregunta 2: Lista todos los actores que trabajaron con Leonardo DiCaprio
+Cypher: MATCH (p:Person {name: 'Leonardo DiCaprio'})-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(actor:Person) WHERE actor.name <> 'Leonardo DiCaprio' RETURN DISTINCT actor.name AS actor, m.title AS pelicula
+Respuesta: Los actores que compartieron pantalla con Leonardo DiCaprio son:
+• Jamie Foxx — Django Unchained
+• Samuel L. Jackson — Django Unchained
+• Christoph Waltz — Django Unchained
+• Kate Winslet — Titanic
+--------------------------------------------------
+Pregunta 3: ¿Qué películas de acción tienen más de un género?
+Cypher: MATCH (m:Movie)-[:IN_GENRE]->(g:Genre) WITH m, collect(g.name) AS generos WHERE size(generos) > 1 AND 'Action' IN generos RETURN m.title AS pelicula, generos
+Respuesta: Las películas de acción con más de un género son:
+• Kill Bill: Volume 2 — Action, Crime
+• Kill Bill: Volume 1 — Action, Crime
+• Avatar — Action, Sci-Fi
+• Interstellar — Action, Sci-Fi
+• Batman Begins — Action, Drama
+• The Dark Knight — Action, Drama
+• Inception — Action, Sci-Fi
+• The Matrix Reloaded — Action, Sci-Fi
+• The Matrix — Action, Sci-Fi
+--------------------------------------------------
+Pregunta 4: Nombra los directores que también actuaron en alguna película
+Cypher: MATCH (p:Person)-[:DIRECTED]->(:Movie) MATCH (p)-[:ACTED_IN]->(:Movie) RETURN DISTINCT p.name AS persona
+Respuesta: No encontré información sobre eso en la base de datos.
+--------------------------------------------------
+Pregunta 5: ¿Cuál es la película más reciente dirigida por James Cameron?
+Cypher: MATCH (p:Person {name: 'James Cameron'})-[:DIRECTED]->(m:Movie) RETURN m.title AS pelicula, m.released AS año ORDER BY m.released DESC LIMIT 1
+Respuesta: La película más reciente dirigida por James Cameron es Avatar, estrenada en 2009.
+--------------------------------------------------
