@@ -147,7 +147,7 @@ MATCH (p:Person {name:'Leonardo DiCaprio'}), (m:Movie {title:'Django Unchained'}
 MATCH (p:Person {name:'Christoph Waltz'}), (m:Movie {title:'Django Unchained'}) CREATE (p)-[:ACTED_IN {roles:['Dr. King Schultz']}]->(m);
 MATCH (p:Person {name:'Samuel L. Jackson'}), (m:Movie {title:'Django Unchained'}) CREATE (p)-[:ACTED_IN {roles:['Stephen']}]->(m);
 MATCH (p:Person {name:'Jamie Foxx'}), (m:Movie {title:'Django Unchained'}) CREATE (p)-[:ACTED_IN {roles:['Django']}]->(m);
-
+MATCH (p:Person {name:'Quentin Tarantino'}), (m:Movie {title:'Pulp Fiction'}) CREATE (p)-[:ACTED_IN {roles:['Jimmie']}]->(m);
 
 // RELACIONES IN_GENRE
 MATCH (m:Movie {title:'The Matrix'}), (g:Genre {name:'Action'}) CREATE (m)-[:IN_GENRE]->(g);
