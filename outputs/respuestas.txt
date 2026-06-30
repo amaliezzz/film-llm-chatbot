@@ -25,7 +25,7 @@ Respuesta: Las películas de acción con más de un género son:
 --------------------------------------------------
 Pregunta 4: Nombra los directores que también actuaron en alguna película
 Cypher: MATCH (p:Person)-[:DIRECTED]->(:Movie) MATCH (p)-[:ACTED_IN]->(:Movie) RETURN DISTINCT p.name AS persona
-Respuesta: No encontré información sobre eso en la base de datos.
+Respuesta: Quentin Tarantino es un director que también actuó en alguna película.
 --------------------------------------------------
 Pregunta 5: ¿Cuál es la película más reciente dirigida por James Cameron?
 Cypher: MATCH (p:Person {name: 'James Cameron'})-[:DIRECTED]->(m:Movie) RETURN m.title AS pelicula, m.released AS año ORDER BY m.released DESC LIMIT 1
