@@ -151,3 +151,16 @@ El sistema cubre tres casos:
 - El sistema requiere nombres completos. "Tarantino" no encuentra resultados; "Quentin Tarantino" sí.
 - Preguntas con fechas relativas como "películas recientes" o "hace 10 años" no se manejan correctamente porque el grafo no tiene fecha actual como referencia.
 - Preguntas que requieren razonamiento sobre múltiples saltos en el grafo (ej. "actores que trabajaron con directores que también actuaron") pueden generar Cypher incorrecto.
+
+
+### Solución de problemas
+
+**Neo4j no conecta después de `docker start`**
+Espera 30 segundos antes de correr el setup. Si el error persiste, elimina el contenedor y créalo de nuevo:
+
+```bash
+docker rm neo4j-movies
+docker run --name neo4j-movies -p 7474:7474 -p 7687:7687 -e NEO4J_AUTH=neo4j/test1234 neo4j:5.13-community
+```
+
+Los datos se perderán, por lo que tendrás que correr `setup_database.py` de nuevo.
